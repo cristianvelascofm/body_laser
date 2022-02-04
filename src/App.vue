@@ -1,55 +1,45 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
+    <v-main id="aplication" class="ma-0 pa-0">
+      <v-container fluid class="ma-0 pa-0 ba-0">
+        
+        <router-view />
+        
+      </v-container>
     </v-main>
+    <v-footer id="pie" xs-10 class="justify-center" padless>
+      <v-card-text class="dark--text text-center">
+        <strong>
+          Body Laser | Centro Estético |
+          SOLEMDev</strong>
+        — {{ new Date().getFullYear() }}
+      </v-card-text>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     //
   }),
 };
 </script>
+
+<style>
+
+/* Quitar El scroll Automatico de Vuetify */
+ html { overflow-y: hidden !important; }
+#aplication,
+#pie {
+  
+  background: rgb(253, 2253, 253) 100%;
+  background: linear-gradient(
+    135deg,
+    rgb(253, 253, 253) 0%,
+    rgb(253, 253, 253) 100%
+  );
+}
+</style>
