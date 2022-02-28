@@ -3,7 +3,7 @@
     <!-- <v-card  elevation="17" color="rgba(238, 217, 214, .4)" class="text-center pa-5"> -->
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field
-        color="#023565"
+        color="#dc8082"
         prepend-icon="mdi-account"
         v-model="user_name"
         :rules="nameRules"
@@ -12,7 +12,8 @@
       ></v-text-field>
 
       <v-text-field
-        color="#023565"
+        color="#dc8082"
+        background-color=""
         v-model="password"
         prepend-icon="mdi-lock"
         :append-icon="show_password ? 'mdi-eye' : 'mdi-eye-off'"
@@ -34,7 +35,7 @@
       ></v-checkbox>
 
       <div>
-      <v-btn color="#79dee3" small class="mr-4 white--text" @click="login"> Ingresar </v-btn>
+      <v-btn color="#417683" small class="mr-4 white--text" @click="login"> Ingresar </v-btn>
       </div>
     </v-form>
     <!-- </v-card> -->
