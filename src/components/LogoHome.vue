@@ -5,7 +5,7 @@
         <v-img
           class="shrink mx-auto"
           flex
-          src="../assets/img/bodylaser_logo.png"
+          src="../assets/img/logotipo bodylaser_Mesa de trabajo 1.png"
           min-height="10"
           height="150"
           min-width="10"

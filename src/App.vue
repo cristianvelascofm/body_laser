@@ -10,7 +10,7 @@
     <v-footer id="pie" xs-10 class="justify-center" padless>
       <v-card-text class="dark--text text-center">
         <strong>
-          Body Laser | Centro Estético |
+          Body Laser | Estética Integral |
           SOLEMDev</strong>
         — {{ new Date().getFullYear() }}
       </v-card-text>
