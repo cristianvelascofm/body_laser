@@ -6,9 +6,9 @@
         outlined
         color="#023565"
         label
-        text-color="#023565"
+        text-color="#447987"
       >
-        <v-icon left> mdi-assistant </v-icon>
+        <v-icon left> mdi-hospital-building </v-icon>
         {{ panel_active }}
       </v-chip>
     </v-flex>
@@ -17,7 +17,7 @@
     <v-flex class="">
       <v-toolbar flat id="title_panel">
         <v-toolbar-title id="title_table"
-          >Lista de {{ panel_active }}</v-toolbar-title
+          >{{ panel_active }}</v-toolbar-title
         >
         <v-divider class="mx-4" inset vertical></v-divider>
         <NewFormButton />
@@ -28,7 +28,7 @@
           max-width="400px"
         >
           <v-card>
-            <v-card-title class="indigo--text text-h6 justify-center"
+            <v-card-title class="indigo--text text-h6 justify-center" elevation="5"
               >¿Está seguro de Eliminar este Item?</v-card-title
             >
             <v-card-actions>
@@ -104,31 +104,31 @@ export default {
         align: "start",
         sortable: false,
         value: "name",
-        class: "indigo darken-4 white--text",
+        class: "cyan darken-3 white--text",
       },
       {
         text: "Clase del Contrato",
         value: "calories",
-        class: "indigo darken-4 white--text",
+        class: "cyan darken-3 white--text",
       },
       { text: "Inicio",
        value: "fat",
-        class: "indigo darken-4 white--text" },
+        class: "cyan darken-3 white--text" },
       {
         text: "Fin",
         value: "carbs",
-        class: "indigo darken-4 white--text",
+        class: "cyan darken-3 white--text",
       },
       {
         text: "Estado",
         value: "protein",
-        class: "indigo darken-4 white--text",
+        class: "cyan darken-3 white--text",
       },
       {
         text: "Actions",
         value: "actions",
         sortable: false,
-        class: "indigo darken-4 white--text",
+        class: "cyan darken-3 white--text",
       },
     ],
     desserts: [],

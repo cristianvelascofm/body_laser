@@ -254,6 +254,33 @@ export default {
             },
           ],
         },
+        {
+          id: "clinica",
+          text: "Clínica",
+          hidden: false,
+          opt: [
+            {
+              id: "nuevo_contratista",
+              text: "Nuevo Contratista",
+              hidden: false,
+            },
+            {
+              id: "lista_contratista",
+              text: "Lista de Contratistas",
+              hidden: false,
+            },
+            {
+              id: "buscar_contratista",
+              text: "Buscar Contratista",
+              hidden: false,
+            },
+            {
+              id: "eliminar_contratista",
+              text: "Eliminar Contratista",
+              hidden: false,
+            },
+          ],
+        },
       ],
     };
   },
