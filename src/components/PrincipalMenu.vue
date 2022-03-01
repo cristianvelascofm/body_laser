@@ -69,217 +69,47 @@ export default {
           id: "cita",
           text: "Citas",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_contrato",
-              text: "Nuevo Contrato",
-              hidden: false,
-            },
-            {
-              id: "lista_contrato",
-              text: "Lista de Contratos",
-              hidden: false,
-            },
-            {
-              id: "buscar_contrato",
-              text: "Buscar Contrato",
-              hidden: false,
-            },
-            {
-              id: "eliminar_contrato",
-              text: "Eliminar Contrato",
-              hidden: false,
-            },
-          ],
+         
         },
         {
           id: "historia_clinica",
           text: "Historias Clínicas",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_contratante",
-              text: "Nuevo Contratante",
-              hidden: false,
-            },
-            {
-              id: "lista_contratante",
-              text: "Lista de Contratantes",
-              hidden: false,
-            },
-            {
-              id: "buscar_contratante",
-              text: "Buscar Contratante",
-              hidden: false,
-            },
-            {
-              id: "eliminar_contratante",
-              text: "Eliminar Contratante",
-              hidden: false,
-            },
-          ],
+          
         },
         {
           id: "cliente",
           text: "Clientes",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_contratista",
-              text: "Nuevo Contratista",
-              hidden: false,
-            },
-            {
-              id: "lista_contratista",
-              text: "Lista de Contratistas",
-              hidden: false,
-            },
-            {
-              id: "buscar_contratista",
-              text: "Buscar Contratista",
-              hidden: false,
-            },
-            {
-              id: "eliminar_contratista",
-              text: "Eliminar Contratista",
-              hidden: false,
-            },
-          ],
+         
         },
         {
           id: "empleado",
           text: "Empleados",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_abogado",
-              text: "Nuevo Abogado",
-              hidden: false,
-            },
-            {
-              id: "lista_abogado",
-              text: "Lista de Abogados",
-              hidden: false,
-            },
-            {
-              id: "buscar_abogado",
-              text: "Buscar Abogado",
-              hidden: false,
-            },
-            {
-              id: "eliminar_Abogado",
-              text: "Eliminar Abogado",
-              hidden: false,
-            },
-          ],
+          
         },
         {
           id: "producto",
           text: "Productos",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_consultor",
-              text: "Nuevo Consultor",
-              hidden: false,
-            },
-            {
-              id: "lista_consultor",
-              text: "Lista de Consultores",
-              hidden: false,
-            },
-            {
-              id: "buscar_consultor",
-              text: "Buscar Consultor",
-              hidden: false,
-            },
-            {
-              id: "eliminar_consultor",
-              text: "Eliminar Consultor",
-              hidden: false,
-            },
-          ],
+         
         },
          {
           id: "insumo",
           text: "Insumos",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_consultor",
-              text: "Nuevo Consultor",
-              hidden: false,
-            },
-            {
-              id: "lista_consultor",
-              text: "Lista de Consultores",
-              hidden: false,
-            },
-            {
-              id: "buscar_consultor",
-              text: "Buscar Consultor",
-              hidden: false,
-            },
-            {
-              id: "eliminar_consultor",
-              text: "Eliminar Consultor",
-              hidden: false,
-            },
-          ],
+         
         },
         {
           id: "maquinaria",
           text: "Máquinas",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_consultor",
-              text: "Nuevo Consultor",
-              hidden: false,
-            },
-            {
-              id: "lista_consultor",
-              text: "Lista de Consultores",
-              hidden: false,
-            },
-            {
-              id: "buscar_consultor",
-              text: "Buscar Consultor",
-              hidden: false,
-            },
-            {
-              id: "eliminar_consultor",
-              text: "Eliminar Consultor",
-              hidden: false,
-            },
-          ],
         },
         {
           id: "clinica",
           text: "Clínica",
           hidden: false,
-          opt: [
-            {
-              id: "nuevo_contratista",
-              text: "Nuevo Contratista",
-              hidden: false,
-            },
-            {
-              id: "lista_contratista",
-              text: "Lista de Contratistas",
-              hidden: false,
-            },
-            {
-              id: "buscar_contratista",
-              text: "Buscar Contratista",
-              hidden: false,
-            },
-            {
-              id: "eliminar_contratista",
-              text: "Eliminar Contratista",
-              hidden: false,
-            },
-          ],
         },
       ],
     };

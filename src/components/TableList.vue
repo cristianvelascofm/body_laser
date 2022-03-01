@@ -20,7 +20,7 @@
           >{{ panel_active }}</v-toolbar-title
         >
         <v-divider class="mx-4" inset vertical></v-divider>
-        <NewFormButton />
+        <!-- <NewFormButton /> -->
         <v-dialog
           v-model="dialogDelete"
           overlay-color="#023565"
@@ -44,12 +44,14 @@
       </v-toolbar>
     </v-flex>
     <v-layout
-      class="overflow-y-auto pa-0 ma-0 ba-0"
+      class="overflow-y-auto pa-0 ma-0 ba-0 "
       fill-height
       style="height: 380px"
       id="container-form"
+      
     >
-      <v-flex class="" xs12>
+      <ClientTb v-if="clientPn"/>
+      <!-- <v-flex class="" xs12>
         <v-data-table
           id="table_general"
           :headers="headers"
@@ -74,7 +76,7 @@
             <v-btn color="primary" @click="initialize"> Reset </v-btn>
           </template>
         </v-data-table>
-      </v-flex>
+      </v-flex> -->
     </v-layout>
     <v-flex class="text-right pt-5 pr-5">
       <v-btn color="red" elevation="1" text small @click="formActive('Close')">
@@ -85,11 +87,17 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex";
+
+
+// import { mapState, mapMutations } from "vuex";
+import { mapState} from "vuex";
+import {mapMutations} from "vuex";
+import ClientTb from '../components/ClientTb.vue'
 // import NewFormButton from "../components/NewFormButton";
 export default {
   name: "TableList",
   components: {
+    ClientTb
     // NewFormButton,
   },
   data: () => ({
@@ -162,6 +170,9 @@ export default {
 
   created() {
     this.initialize();
+  },
+  computed: {
+    ...mapState(["clientPn","panel_active"]), 
   },
 
   methods: {

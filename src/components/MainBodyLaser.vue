@@ -8,7 +8,8 @@
           </v-flex>
           <v-flex xs7 class="">
             <CompanyLogo v-if="stand_by"/>
-            <TableList v-if="table_panel"/>
+            <ClientTb v-if="clientPn"/>
+            <!-- <TableList v-if="table_panel"/> -->
           </v-flex>
         </v-layout>
       </v-flex>
@@ -20,6 +21,7 @@
 <script>
 import PrincipalMenu from "../components/PrincipalMenu";
 import CompanyLogo from "../components/CompanyLogo";
+import ClientTb from '../components/ClientTb';
 // import Person from "../components/Person";
 // import ContractSelector from '../components/ContractSelector';
 import TableList from '../components/TableList'
@@ -30,6 +32,7 @@ export default {
   components: {
     PrincipalMenu,
     CompanyLogo,
+    ClientTb,
     // Person,
     // ContractSelector,
     TableList
@@ -39,7 +42,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["panel_active","stand_by","table_panel"]),
+    ...mapState(["panel_active","stand_by","table_panel","clientPn"]),
   },
 };
 </script>
