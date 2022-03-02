@@ -5,7 +5,8 @@
           flex
           src="../assets/img/logotipo bodylaser_Mesa de trabajo 1.png"
           
-          width="800"
+          width="500"
+          height=""
         ></v-img>
   </v-container>
 </template>

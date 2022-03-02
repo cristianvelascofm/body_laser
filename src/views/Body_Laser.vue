@@ -5,7 +5,7 @@
         <AccountMenu v-if="login_state" class="pa-0" />
       </v-flex>
     </v-layout>
-    <v-layout fill-height style="height: 820px" justify-start align-center>
+    <v-layout fill-height style="height: 620px" justify-start align-center> 
       <v-flex xs12 class="text-center white--text ma-0 pa-0 ba-0">
         <Home v-if="!login_state" />
         <MainBodyLaser v-if="login_state" />

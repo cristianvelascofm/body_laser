@@ -37,23 +37,22 @@ export default new Vuex.Store({
         if (active == "Clientes") {
           state.clientPn = true,
           console.log('Client', state.clientPn)
-          // state.new_contract = true
-          // state.new_person = false
-        } else {
-          state.new_person = true
-          state.new_contract = false
+
+        } else if(active == "Clínica") {
+          console.log('Clinic')
           var title = ""
-          for (var i = 0; i < active.length - 1; i++) {
-            title = title + active.charAt(i)
-          }
-          state.title_form_person = title
+          // for (var i = 0; i < active.length - 1; i++) {
+          //   title = title + active.charAt(i)
+          // }
+          // state.title_form_person = title
 
         }
         state.table_panel = true
         state.stand_by = false
       } else {
         state.stand_by = true
-        state.table_panel = false
+        
+        state.clientPn = false
       }
     },
 
