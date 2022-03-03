@@ -11,7 +11,7 @@
           elevation="17"
           color="rgba(250, 217, 227, .3)"
           class="text-center pb-10 ma-0 ba-0 justify-center"
-          height="480px"
+          height="520px"
         >
           <v-card-title class="text-h6 rounded-xl">
             <v-img
@@ -33,7 +33,7 @@
             v-if="principal_menu_active"
             v-for="element in menu_bar_option"
             :key="element.id"
-            class="justify-center pb-20 mt-7"
+            class="justify-center pb-20 mt-13"
           >
             <v-col class="col-6">
               <v-btn
