@@ -50,8 +50,8 @@
       id="container-form"
       
     >
-      <ClientTb v-if="clientPn"/>
-      <!-- <v-flex class="" xs12>
+      <!-- <ClientTb v-if="clientPn"/> -->
+      <v-flex class="" xs12>
         <v-data-table
           id="table_general"
           :headers="headers"
@@ -76,7 +76,7 @@
             <v-btn color="primary" @click="initialize"> Reset </v-btn>
           </template>
         </v-data-table>
-      </v-flex> -->
+      </v-flex>
     </v-layout>
     <v-flex class="text-right pt-5 pr-5">
       <v-btn color="red" elevation="1" text small @click="formActive('Close')">
