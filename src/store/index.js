@@ -20,7 +20,12 @@ export default new Vuex.Store({
     suppliesPn: false,
     machinePn: false,
     clinicPn: false,
+    new_form: false,
     
+
+    new_button: false,
+    new_client: false,
+    formulario_nuevo: false,
 
 
 
@@ -36,6 +41,9 @@ export default new Vuex.Store({
       if (active != 'Close') {
         if (active == "Clientes") {
           state.clientPn = true,
+          state.new_form = true,
+          state.stand_by = false,
+          state.new_client = true.valueOf,
           console.log('Client', state.clientPn)
 
         } else if(active == "Clínica") {
@@ -55,6 +63,14 @@ export default new Vuex.Store({
         state.clientPn = false
       }
     },
+    closeDialogForm(state){
+      state.formulario_nuevo = false
+    },
+    accountMenu(state,action){
+      if(action == 'Cerrar Sesión'){
+        state.login_state = false
+      }
+    }
 
   },
   actions: {

@@ -7,8 +7,9 @@
             <PrincipalMenu />
           </v-flex>
           <v-flex xs7 class="" style="height: 550px">
-            <CompanyLogo v-if="stand_by"/>
+            <CompanyLogo v-if="stand_by"/>           
             <ClientTb v-if="clientPn"/>
+
             <!-- <TableList v-if="table_panel"/> -->
           </v-flex>
         </v-layout>
@@ -42,7 +43,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["panel_active","stand_by","table_panel","clientPn"]),
+    ...mapState(["panel_active","stand_by","table_panel","clientPn", "new_form"]),
   },
 };
 </script>

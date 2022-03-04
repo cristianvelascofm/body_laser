@@ -18,7 +18,7 @@
       <v-toolbar flat id="title_panel">
         <v-toolbar-title id="title_table">{{ panel_active }}</v-toolbar-title>
         <v-divider class="mx-4" inset vertical></v-divider>
-        <!-- <NewFormButton /> -->
+        <NewFormButton/>
         <v-dialog
           v-model="dialogDelete"
           overlay-color="#023565"
@@ -93,9 +93,12 @@
 <script>
 import { mapState } from "vuex";
 import { mapMutations } from "vuex";
+import NewFormButton from "../components/NewFormButton.vue";
 export default {
   name: "ClientTb",
-  components: {},
+  components: {
+    NewFormButton,
+  },
 
   data: () => ({
     itemsPerPage: 5,
