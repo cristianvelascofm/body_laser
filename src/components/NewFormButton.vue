@@ -21,6 +21,8 @@
       </template>
         <!-- <Contract class="ma-0 ba-0 pa-0" v-if="new_contract"/> -->
         <Person class="ma-0 ba-0 pa-0" v-if="new_client"/>
+        <Date class="ma-0 ba-0 pa-0" v-if="new_date"/>
+        <History class="ma-0 ba-0 pa-0" v-if="new_history"/>
 
     </v-dialog>
   </v-row>
@@ -31,11 +33,14 @@
 import { mapState, mapMutations } from "vuex";
 // import Contract from '../components/Contract'
 import  Person  from "../components/PersonNewForm.vue";
+import Date from "../components/DateNewForm.vue";
+import History from "../components/HistoryNewForm.vue"
 export default {
   name: "NewFormButton",
   components:{
-    // Contract,
-    Person
+    Person,
+    Date,
+    History,
   },
   data() {
     return {
@@ -48,7 +53,7 @@ export default {
     
   },
   computed: {
-    ...mapState(["formulario_nuevo","new_person","new_contract","new_client"]),
+    ...mapState(["formulario_nuevo","new_person","new_date","new_client", "new_history"]),
   },
 };
 </script>

@@ -21,11 +21,14 @@ export default new Vuex.Store({
     machinePn: false,
     clinicPn: false,
     new_form: false,
-    
+    historyPn: false,
+    new_history: false,
 
     new_button: false,
     new_client: false,
+    new_date: false,
     formulario_nuevo: false,
+    title_form_person: '',
 
 
 
@@ -43,17 +46,35 @@ export default new Vuex.Store({
           state.clientPn = true,
           state.new_form = true,
           state.stand_by = false,
+          state.new_date =false
+          state.title_form_person= 'o Cliente'
           state.new_client = true.valueOf,
           console.log('Client', state.clientPn)
 
-        } else if(active == "Clínica") {
-          console.log('Clinic')
+        } else if(active == "Citas") {
+          console.log('Citas')
           var title = ""
+          state.datePn = true
+          state.clientPn = false
+          state.stand_by = false
+          state.new_client = false
+          state.new_date = true
+          state.title_form_person= 'a Cita'
           // for (var i = 0; i < active.length - 1; i++) {
           //   title = title + active.charAt(i)
           // }
           // state.title_form_person = title
 
+        } else if (active == "Historias"){
+          console.log('Historias')
+          state.datePn = false
+          state.clientPn = false
+          state.stand_by = false
+          state.new_client = false
+          state.new_date = false
+          state.historyPn = true
+          state.new_history = true
+          state.title_form_person = 'a Historia Clínica'
         }
         state.table_panel = true
         state.stand_by = false
@@ -61,6 +82,8 @@ export default new Vuex.Store({
         state.stand_by = true
         
         state.clientPn = false
+        state.datePn = false
+        state.historyPn = false
       }
     },
     closeDialogForm(state){

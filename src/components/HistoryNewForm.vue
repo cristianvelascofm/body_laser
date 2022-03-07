@@ -12,17 +12,24 @@
         show-arrows
       >
         <v-tabs-slider color="red lighten-3"></v-tabs-slider>
-        <v-tab class="">General</v-tab>
+        <v-tab class="">Cliente</v-tab>
         <v-tab-item>
           <v-card-text>
             <v-layout
-              class="overflow-y-auto pa-5 ma-0 ba-0"
+              class="overflow-y-auto pa-3 ma-0 ba-0"
               justify-center
               fill-height
               style="height: 450px"
               id="container-form"
             >
               <v-flex>
+                <v-text-field
+                  v-model="message3"
+                  filled
+                  label="Cita Asociada"
+                  clearable
+                  height="3px"
+                ></v-text-field>
                 <v-form @submit.prevent="add" class="">
                   <v-layout class="">
                     <v-flex xs6 class="">
@@ -164,27 +171,9 @@
                   </v-layout>
 
                   <v-layout>
-                    <v-flex xs6>
-                      <!-- <v-text-field
-                    color="#023565"
-                    prepend-icon="mdi-account-circle"
-                    label="Usuario"
-                  ></v-text-field> -->
-                    </v-flex>
-                    <v-flex xs6 class="pl-2">
-                      <!-- <v-text-field
-                    color="#023565"
-                    prepend-icon="mdi-lock-outline"
-                    label="Contraseña"
-                  ></v-text-field> -->
-                    </v-flex>
+                    <v-flex xs6> </v-flex>
+                    <v-flex xs6 class="pl-2"> </v-flex>
                   </v-layout>
-                  <v-select
-                    prepend-icon="mdi-alpha-s-box"
-                    color="#023565"
-                    :items="state"
-                    label="Estado"
-                  ></v-select>
                 </v-form>
               </v-flex>
             </v-layout>
@@ -193,12 +182,10 @@
         <v-tab>Cuadro Patológico</v-tab>
         <v-tab-item>
           <v-layout fill-height style="heigth: 400px" h>
-
-        
             <v-flex xs12>
               <v-textarea
-              class="pa-5"
-              height="412"
+                class="pa-5"
+                height="412"
                 filled
                 name="input-7-4"
                 label="Patología"
@@ -207,34 +194,94 @@
             </v-flex>
             <v-flex xs12>
               <v-textarea
-              class="pa-5"
-              height="412"
+                class="pa-5"
+                height="412"
                 filled
                 name="input-7-4"
                 label="Medicación Habitual"
                 value="Metronidazol"
               ></v-textarea>
             </v-flex>
-
           </v-layout>
         </v-tab-item>
         <v-tab>Historias Clínicas</v-tab>
         <v-tab-item>
-          <v-layout
-            class="overflow-y-auto pa-3 mt-5 ba-0"
-            fill-height
-            style="height: 450px"
-            id="container-form"
-          >
-            <v-flex class="" xs12>
-              <v-data-table
+          <v-layout fill-height style="heigth: 400px">
+            <v-flex xs12>
+              <v-textarea
+                class="pa-5"
+                height="170"
+                filled
+                name="input-7-4"
+                label="Diagnostico"
+                value=""
+              ></v-textarea>
+            </v-flex>
+          </v-layout>
+          <v-layout fill-height style="heigth: 210px" h>
+            <v-flex xs12>
+              <v-textarea
+                class="pa-5"
+                height="170"
+                filled
+                name="input-7-4"
+                label="Tratamiento Realizado e Indicaciones"
+                value=""
+              ></v-textarea>
+            </v-flex>
+            <v-flex xs12>
+              <v-textarea
+                class="pa-5"
+                height="170"
+                filled
+                name="input-7-4"
+                label="Observaciones"
+                value=""
+              ></v-textarea>
+            </v-flex>
+          </v-layout>
+        </v-tab-item>
+        <v-tab>Insumos</v-tab>
+        <v-tab-item>
+            <v-layout fill-height style="heigth: 400px">
+                <v-flex class="pa-10">
+            <v-form @submit.prevent="add" class="">
+                  <v-layout class="" justify-center>
+                    <v-flex xs12 class="">
+                      <v-text-field
+                        color="#023565"
+                        prepend-icon="mdi-shopping"
+                        label="Producto"
+                      ></v-text-field>
+                      <v-text-field
+                        color="#023565"
+                        prepend-icon="mdi-numeric"
+                        label="Cantidad"
+                      ></v-text-field>
+                    </v-flex>
+                    
+                  </v-layout>
+                  <v-layout>
+                      <v-flex xs1 class="mr-5">
+                          <v-btn rounded dark small color="green" elevation= "10">+</v-btn>
+                      </v-flex>
+                      <v-flex xs1>
+                          <v-btn rounded dark small color="red" elevation= "10">-</v-btn>
+                      </v-flex>
+                  </v-layout>
+            </v-form>
+            </v-flex>
+            </v-layout>
+            <v-layout>
+                <v-flex class="pa-5">
+                    <v-data-table
                 id="table_general"
-                :headers="headers"
+                :headers="headers_insumo"
                 fixed-header
-                v-model="selected"
-                :items="desserts"
+                v-model="selected_insumo"
+                :items="desserts_insumo"
                 item-key="name"
-                height="370px"
+                height="120px"
                 :items-per-page="itemsPerPage"
               >
                 <template v-slot:item.actions="{ item }">
@@ -251,8 +298,8 @@
                   <v-btn color="primary" @click="initialize"> Ver </v-btn>
                 </template>
               </v-data-table>
-            </v-flex>
-          </v-layout>
+                </v-flex>
+            </v-layout>
         </v-tab-item>
       </v-tabs>
       <v-card-actions>
@@ -273,7 +320,7 @@
 import { mapState, mapMutations } from "vuex";
 // import Dependence from "../components/Dependence";
 export default {
-  name: "Person",
+  name: "History",
   components: {
     // Dependence,
   },
@@ -283,6 +330,22 @@ export default {
       birth_date_picker: false,
       // Esta debe ser Cargada desde la base de Datos
       desserts: [],
+      headers_insumo:[
+      {
+          id: "insumo",
+          text: "Producto",
+          value: "product",
+          class: "cyan darken-3 white--text",
+          align: "start",
+        },    
+        {
+          id: "cantidad",
+          text: "Cantidad",
+          value: "cantidad",
+          class: "cyan darken-3 white--text",
+          align: "start",
+        },
+      ],
       headers: [
         {
           id: "numero_historia",
