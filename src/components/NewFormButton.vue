@@ -23,6 +23,7 @@
         <Person class="ma-0 ba-0 pa-0" v-if="new_client"/>
         <Date class="ma-0 ba-0 pa-0" v-if="new_date"/>
         <History class="ma-0 ba-0 pa-0" v-if="new_history"/>
+        <Employed class="ma-0 ba-0 pa-0" v-if="new_employed"/>
 
     </v-dialog>
   </v-row>
@@ -35,12 +36,14 @@ import { mapState, mapMutations } from "vuex";
 import  Person  from "../components/PersonNewForm.vue";
 import Date from "../components/DateNewForm.vue";
 import History from "../components/HistoryNewForm.vue"
+import Employed from "../components/EmployedNewForm.vue"
 export default {
   name: "NewFormButton",
   components:{
     Person,
     Date,
     History,
+    Employed
   },
   data() {
     return {
@@ -53,7 +56,7 @@ export default {
     
   },
   computed: {
-    ...mapState(["formulario_nuevo","new_person","new_date","new_client", "new_history"]),
+    ...mapState(["formulario_nuevo","new_person","new_date","new_client", "new_history", "new_employed"]),
   },
 };
 </script>

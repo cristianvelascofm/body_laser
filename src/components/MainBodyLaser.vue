@@ -11,6 +11,7 @@
             <ClientTb v-if="clientPn"/>
             <DateTb v-if="datePn"/>
             <HistoryTb v-if= "historyPn"/>
+            <EmployedTb v-if = "employedPn"/>
           </v-flex>
         </v-layout>
       </v-flex>
@@ -25,10 +26,7 @@ import CompanyLogo from "../components/CompanyLogo";
 import ClientTb from '../components/ClientTb';
 import DateTb from '../components/DateTb.vue'
 import HistoryTb from '../components/HistoryTb.vue'
-// import Person from "../components/Person";
-
-// import ContractSelector from '../components/ContractSelector';
-import TableList from '../components/TableList'
+import EmployedTb from '../components/EmployedTb.vue'
 import { mapState } from "vuex";
 
 export default {
@@ -39,6 +37,7 @@ export default {
     ClientTb,
     DateTb,
     HistoryTb,
+    EmployedTb
     
   },
   data() {
@@ -46,7 +45,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["panel_active","stand_by","table_panel","clientPn","datePn", "new_form", "historyPn"]),
+    ...mapState(["panel_active","stand_by","table_panel","clientPn","datePn", "new_form", "historyPn","employedPn"]),
   },
 };
 </script>

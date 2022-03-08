@@ -15,7 +15,7 @@ export default new Vuex.Store({
     datePn: false,
     clientPn: false,
     clinicHistoryPn: false,
-    employeePn: false,
+    employedPn: false,
     productPn: false,
     suppliesPn: false,
     machinePn: false,
@@ -27,6 +27,7 @@ export default new Vuex.Store({
     new_button: false,
     new_client: false,
     new_date: false,
+    new_employed: false,
     formulario_nuevo: false,
     title_form_person: '',
 
@@ -75,6 +76,18 @@ export default new Vuex.Store({
           state.historyPn = true
           state.new_history = true
           state.title_form_person = 'a Historia Clínica'
+        } else if (active == "Empleados"){
+          state.datePn = false
+          state.clientPn = false
+          state.stand_by = false
+          state.new_client = false
+          state.new_date = false
+          state.historyPn = false
+          state.new_history = false
+          state.employedPn = true
+          state.new_employed = true
+          state.title_form_person = 'o Empleado'
+          console.log('Empleado')
         }
         state.table_panel = true
         state.stand_by = false
@@ -84,6 +97,7 @@ export default new Vuex.Store({
         state.clientPn = false
         state.datePn = false
         state.historyPn = false
+        state.employedPn = false
       }
     },
     closeDialogForm(state){

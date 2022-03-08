@@ -149,37 +149,22 @@
                     </v-flex>
                   </v-layout>
                   <v-layout>
-                    <v-flex xs11>
-                      <!-- <v-select
-                    prepend-icon="mdi-office-building"
-                    color="#023565"
-                    :items="dependence"
-                    label="Dependencia"
-                  ></v-select> -->
-                    </v-flex>
-                    <v-flex xs1 class="pt-3">
-                      <!-- <Dependence /> -->
-                      <!-- <v-btn color="#023565" elevation="5" fab dark small ><v-icon dark > mdi-office-building </v-icon></v-btn> -->
-                    </v-flex>
-                  </v-layout>
-
-                  <v-layout>
                     <v-flex xs6>
-                      <!-- <v-text-field
-                    color="#023565"
-                    prepend-icon="mdi-account-circle"
-                    label="Usuario"
-                  ></v-text-field> -->
+                      <v-text-field
+                        color="#023565"
+                        prepend-icon="mdi-account"
+                        label="Usuario"
+                      ></v-text-field>
                     </v-flex>
                     <v-flex xs6 class="pl-2">
-                      <!-- <v-text-field
-                    color="#023565"
-                    prepend-icon="mdi-lock-outline"
-                    label="Contraseña"
-                  ></v-text-field> -->
+                      <v-text-field
+                        color="#023565"
+                        prepend-icon="mdi-textbox-password"
+                        label="Contraseña"
+                      ></v-text-field>
                     </v-flex>
                   </v-layout>
-                  <v-select
+                   <v-select
                     prepend-icon="mdi-alpha-s-box"
                     color="#023565"
                     :items="state"
@@ -189,70 +174,6 @@
               </v-flex>
             </v-layout>
           </v-card-text>
-        </v-tab-item>
-        <v-tab>Cuadro Patológico</v-tab>
-        <v-tab-item>
-          <v-layout fill-height style="heigth: 400px" h>
-
-        
-            <v-flex xs12>
-              <v-textarea
-              class="pa-5"
-              height="412"
-                filled
-                name="input-7-4"
-                label="Antecedentes"
-                value="Diabetes - Hipertiroidismo - Gastritis"
-              ></v-textarea>
-            </v-flex>
-            <v-flex xs12>
-              <v-textarea
-              class="pa-5"
-              height="412"
-                filled
-                name="input-7-4"
-                label="Medicación Habitual"
-                value="Metronidazol"
-              ></v-textarea>
-            </v-flex>
-
-          </v-layout>
-        </v-tab-item>
-        <v-tab>Historias Clínicas</v-tab>
-        <v-tab-item>
-          <v-layout
-            class="overflow-y-auto pa-3 mt-5 ba-0"
-            fill-height
-            style="height: 450px"
-            id="container-form"
-          >
-            <v-flex class="" xs12>
-              <v-data-table
-                id="table_general"
-                :headers="headers"
-                fixed-header
-                v-model="selected"
-                :items="desserts"
-                item-key="name"
-                height="370px"
-                :items-per-page="itemsPerPage"
-              >
-                <template v-slot:item.actions="{ item }">
-                  <v-icon small class="mr-2" @click="editItem(item)">
-                    mdi-eye
-                  </v-icon>
-                  <v-icon small class="mr-2" @click="editItem(item)">
-                    mdi-pencil
-                  </v-icon>
-                  <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon>
-                </template>
-
-                <template v-slot:no-data>
-                  <v-btn color="primary" @click="initialize"> Ver </v-btn>
-                </template>
-              </v-data-table>
-            </v-flex>
-          </v-layout>
         </v-tab-item>
       </v-tabs>
       <v-card-actions>
@@ -273,7 +194,7 @@
 import { mapState, mapMutations } from "vuex";
 // import Dependence from "../components/Dependence";
 export default {
-  name: "Person",
+  name: "Employed",
   components: {
     // Dependence,
   },
@@ -282,52 +203,6 @@ export default {
       date: null,
       birth_date_picker: false,
       // Esta debe ser Cargada desde la base de Datos
-      desserts: [],
-      headers: [
-        {
-          id: "numero_historia",
-          text: "Número",
-          value: "history_number",
-          class: "cyan darken-3 white--text",
-          align: "start",
-        },
-        {
-          id: "paciente",
-          text: "Paciente",
-          value: "patient",
-          class: "cyan darken-3 white--text",
-          align: "start",
-        },
-        {
-          id: "asunto",
-          text: "Asunto",
-          value: "topic",
-          class: "cyan darken-3 white--text",
-          align: "start",
-        },
-        {
-          id: "fecha_historia",
-          text: "Fecha",
-          value: "history_date",
-          class: "cyan darken-3 white--text",
-          align: "start",
-        },
-        {
-          id: "empleado",
-          text: "Empleado",
-          value: "employed",
-          class: "cyan darken-3 white--text",
-          align: "start",
-        },
-        {
-          id: "acciones",
-          text: "Acciones",
-          value: "actions",
-          class: "cyan darken-3 white--text",
-          align: "start",
-        },
-      ],
-
       state: [
         {
           id: "active",
@@ -378,15 +253,7 @@ export default {
     },
 
     initialize() {
-      this.desserts = [
-        {
-          history_number: "HC-164587",
-          patient: "Carlos Rivera",
-          topic: "Consulta",
-          history_date: "25/01/2022",
-          employed: "Ana Rengifo",
-        },
-      ];
+    
     },
     editItem(item) {
       console.log("aqui");

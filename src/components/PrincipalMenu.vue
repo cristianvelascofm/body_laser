@@ -89,7 +89,7 @@
                   small
                   dark
                   elevation="10"
-                  @click="change(element.text)"
+                  @click="formActive(element.text)"
                   >{{ element.text }}
                 </v-btn>
               </v-col>
@@ -114,7 +114,6 @@
         </v-card>
       </v-flex>
     </v-layout>
-    <!-- <ContractSelector v-if="new_contract"/> -->
   </v-container>
 </template>
 
