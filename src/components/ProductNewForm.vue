@@ -25,7 +25,7 @@
               <v-flex>
                 <v-form @submit.prevent="add" class="">
                   <v-layout class="">
-                    <v-flex xs6 class="">
+                    <v-flex xs12 class="">
                       <v-text-field
                         color="#023565"
                         prepend-icon="mdi-barcode"

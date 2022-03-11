@@ -24,6 +24,7 @@
         <Date class="ma-0 ba-0 pa-0" v-if="new_date"/>
         <History class="ma-0 ba-0 pa-0" v-if="new_history"/>
         <Employed class="ma-0 ba-0 pa-0" v-if="new_employed"/>
+        <Product class="ma-0 ba-0 pa-0" v-if="new_product"/>
 
     </v-dialog>
   </v-row>
@@ -37,13 +38,15 @@ import  Person  from "../components/PersonNewForm.vue";
 import Date from "../components/DateNewForm.vue";
 import History from "../components/HistoryNewForm.vue"
 import Employed from "../components/EmployedNewForm.vue"
+import Product from "../components/ProductNewForm.vue"
 export default {
   name: "NewFormButton",
   components:{
     Person,
     Date,
     History,
-    Employed
+    Employed,
+    Product
   },
   data() {
     return {
@@ -56,7 +59,7 @@ export default {
     
   },
   computed: {
-    ...mapState(["formulario_nuevo","new_person","new_date","new_client", "new_history", "new_employed"]),
+    ...mapState(["formulario_nuevo","new_person","new_date","new_client", "new_history", "new_employed", "new_product"]),
   },
 };
 </script>

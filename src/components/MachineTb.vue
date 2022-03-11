@@ -93,9 +93,9 @@
 <script>
 import { mapState } from "vuex";
 import { mapMutations } from "vuex";
-import NewFormButton from "../components/NewFormButton.vue";
+import NewFormButton from "./NewFormButton.vue";
 export default {
-  name: "ProductTb",
+  name: "MachineTb",
   components: {
     NewFormButton,
   },
@@ -123,25 +123,30 @@ export default {
       },
     headers: [
       {
-        text: "Nombres",
+        text: "Nombre",
         align: "start",
         sortable: false,
         value: "name",
         class: "cyan darken-3 white--text",
       },
       {
-        text: "Documento",
-        value: "document",
+        text: "Marca",
+        value: "marc",
         class: "cyan darken-3 white--text",
       },
       {
-        text: "Celular",
-        value: "cellphone",
+        text: "Categoría",
+        value: "category",
         class: "cyan darken-3 white--text",
       },
       {
-        text: "Correo",
-        value: "email",
+        text: "Tamaño Punto",
+        value: "size",
+        class: "cyan darken-3 white--text",
+      },
+      {
+        text: "Descripción",
+        value: "description",
         class: "cyan darken-3 white--text",
       },
       {
@@ -181,10 +186,11 @@ export default {
     initialize() {
       this.desserts = [
         {
-          name: "Carlos Rivera",
-          document: 1061784985,
-          cellphone: 3174587412,
-          email: "crivera@hotmail.com",
+          name: "Laser Diodo Triple Onda Profesional BM-108",
+          marc: "BM",
+          category: "Depilación Corporal",
+          size: "15*15MM / 20*20MM",
+          description: "Alejandrita laser 755NM + Laser diodo 808NM + Laser Nd Yag 1064NM",
           state: "Activo",
         },
        

@@ -28,6 +28,7 @@ export default new Vuex.Store({
     new_client: false,
     new_date: false,
     new_employed: false,
+    new_product: false,
     formulario_nuevo: false,
     title_form_person: '',
 
@@ -48,6 +49,8 @@ export default new Vuex.Store({
           state.new_form = true,
           state.stand_by = false,
           state.new_date =false
+          state.productPn = false
+          state.new_product = false
           state.title_form_person= 'o Cliente'
           state.new_client = true.valueOf,
           console.log('Client', state.clientPn)
@@ -58,6 +61,8 @@ export default new Vuex.Store({
           state.datePn = true
           state.clientPn = false
           state.stand_by = false
+          state.productPn = false
+          state.new_product = false
           state.new_client = false
           state.new_date = true
           state.title_form_person= 'a Cita'
@@ -73,6 +78,8 @@ export default new Vuex.Store({
           state.stand_by = false
           state.new_client = false
           state.new_date = false
+          state.productPn = false
+          state.new_product = false
           state.historyPn = true
           state.new_history = true
           state.title_form_person = 'a Historia Clínica'
@@ -84,10 +91,25 @@ export default new Vuex.Store({
           state.new_date = false
           state.historyPn = false
           state.new_history = false
+          state.productPn = false
+          state.new_product = false
           state.employedPn = true
           state.new_employed = true
           state.title_form_person = 'o Empleado'
           console.log('Empleado')
+        } else if (active == "Productos"){
+          state.datePn = false
+          state.clientPn = false
+          state.stand_by = false
+          state.new_client = false
+          state.new_date = false
+          state.historyPn = false
+          state.new_history = false
+          state.employedPn = false
+          state.new_employed = false
+          state.productPn = true
+          state.new_product = true
+          state.title_form_person = 'o Producto'
         }
         state.table_panel = true
         state.stand_by = false
