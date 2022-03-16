@@ -27,7 +27,9 @@
       >
       </v-text-field>
       <div class="mb-0">
-      <v-btn color="grey" plain x-small class="mr-4"> Olvidé mi Contraseña </v-btn>
+        <v-btn color="grey" plain x-small class="mr-4">
+          Olvidé mi Contraseña
+        </v-btn>
       </div>
       <v-checkbox
         v-model="checkbox_remember_me"
@@ -35,7 +37,9 @@
       ></v-checkbox>
 
       <div>
-      <v-btn color="#417683" small class="mr-4 white--text" @click="login"> Ingresar </v-btn>
+        <v-btn color="#417683" small class="mr-4 white--text" @click="login; proob()">
+          Ingresar
+        </v-btn>
       </div>
     </v-form>
     <!-- </v-card> -->
@@ -44,12 +48,14 @@
 
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from "vuex";
 import { mapMutations } from "vuex";
+import axios from "axios";
 export default {
   name: "Login",
   data() {
     return {
+      path: "http://192.168.130.79:5000/",
       user_name: "",
       password: "",
       show_password: false,
@@ -58,7 +64,8 @@ export default {
       // Reglas De la Validación del Formulario
       nameRules: [
         (v) => !!v || "Usuario Requerido",
-        (v) => (v && v.length <= 10) || "El Usuario debe ser mayor a 10 Caracteres",
+        (v) =>
+          (v && v.length <= 10) || "El Usuario debe ser mayor a 10 Caracteres",
       ],
       rules: {
         required: (value) => !!value || "Contraseña Requerida.",
@@ -68,10 +75,19 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(['login'])
+    ...mapMutations(["login"]),
+
+    proob() {
+      console.log('Login Ok')
+      var actionDir = {};
+      actionDir["action"] = "stop";
+      axios.post(this.path, actionDir).then((response) => {
+        console.log(response)
+      });
+    },
   },
-  computed:{
-    ...mapState(['login_state'])
+  computed: {
+    ...mapState(["login_state"]),
   },
   mounted() {},
 };
