@@ -37,7 +37,7 @@
       ></v-checkbox>
 
       <div>
-        <v-btn color="#417683" small class="mr-4 white--text" @click="login; proob()">
+        <v-btn color="#417683" small class="mr-4 white--text" @click='proob()'>
           Ingresar
         </v-btn>
       </div>
@@ -51,6 +51,7 @@
 import { mapState } from "vuex";
 import { mapMutations } from "vuex";
 import axios from "axios";
+import VueCryptojs from 'vue-cryptojs'
 export default {
   name: "Login",
   data() {
@@ -78,22 +79,22 @@ export default {
     ...mapMutations(["login"]),
 
     proob() {
-      console.log('Login Ok')
+      console.log('ok')
       var actionDir = {};
       actionDir["action"] = "stop";
       axios.post(this.path, actionDir).then((response) => {
         console.log(response)
+        console.log(this.$CryptoJS.AES.encrypt("Hi There!", "Secret Passphrase").toString())
+        this.$store.commit('login')
       });
+      
     },
   },
-<<<<<<< HEAD
-  computed:{
-    ...mapState(['login_state'])
-    
-=======
+
+
   computed: {
     ...mapState(["login_state"]),
->>>>>>> 84f755a667eb25d4fd6f6852032f032b71f0e918
+
   },
   mounted() {},
 };

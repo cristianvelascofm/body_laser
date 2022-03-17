@@ -9,7 +9,7 @@ import '@babel/polyfill'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+import VueCryptojs from 'vue-cryptojs'
 
 Vue.config.productionTip = false
 
@@ -19,5 +19,6 @@ new Vue({
   vuetify,
   axios,
   VueAxios,
+  VueCryptojs,
   render: h => h(App)
 }).$mount('#app')

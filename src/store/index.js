@@ -38,7 +38,7 @@ export default new Vuex.Store({
   mutations: {
     login(state) {
       state.login_state = true,
-        console.log('Login'),
+        console.log('Login Body'),
         state.stand_by = true
     },
     formActive(state, active) {
