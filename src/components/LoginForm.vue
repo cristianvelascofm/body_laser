@@ -35,7 +35,7 @@
       ></v-checkbox>
 
       <div>
-      <v-btn color="#417683" small class="mr-4 white--text" @click="login"> Ingresar </v-btn>
+      <v-btn color="#417683" small class="mr-4 white--text" @click="login; astro()"> Ingresar </v-btn>
       </div>
     </v-form>
     <!-- </v-card> -->
@@ -72,6 +72,7 @@ export default {
   },
   computed:{
     ...mapState(['login_state'])
+    
   },
   mounted() {},
 };

@@ -123,7 +123,7 @@ export default {
       },
     headers: [
       {
-        text: "Nombres",
+        text: "Nombre",
         align: "start",
         sortable: false,
         value: "name",
@@ -131,17 +131,17 @@ export default {
       },
       {
         text: "Documento",
-        value: "document",
+        value: "marca",
         class: "cyan darken-3 white--text",
       },
       {
         text: "Celular",
-        value: "cellphone",
+        value: "category",
         class: "cyan darken-3 white--text",
       },
       {
         text: "Correo",
-        value: "email",
+        value: "Precio de Venta",
         class: "cyan darken-3 white--text",
       },
       {
