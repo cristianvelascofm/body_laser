@@ -37,7 +37,7 @@
       ></v-checkbox>
 
       <div>
-        <v-btn color="#417683" small class="mr-4 white--text" @click='proob()'>
+        <v-btn color="#417683" small class="mr-4 white--text" @click='login()'>
           Ingresar
         </v-btn>
       </div>
@@ -51,17 +51,23 @@
 import { mapState } from "vuex";
 import { mapMutations } from "vuex";
 import axios from "axios";
-import VueCryptojs from 'vue-cryptojs'
+import CryptoJS from 'crypto-js';
+// import CryptoJS from 'vue-cryptojs'
 export default {
   name: "Login",
+  
   data() {
     return {
-      path: "http://192.168.56.1:5000/",
+      // path: "http://192.168.56.1:5000/",
+      path : 'http://192.168.130.79:5000/',
       user_name: "",
       password: "",
       show_password: false,
       checkbox_remember_me: false,
       valid: true,
+      
+
+
       // Reglas De la Validación del Formulario
       nameRules: [
         (v) => !!v || "Usuario Requerido",
@@ -75,18 +81,33 @@ export default {
       },
     };
   },
+  
   methods: {
     ...mapMutations(["login"]),
 
-    proob() {
-      console.log('ok')
-      var actionDir = {};
-      actionDir["action"] = "stop";
-      axios.post(this.path, actionDir).then((response) => {
-        console.log(response)
-        console.log(this.$CryptoJS.AES.encrypt("Hi There!", "Secret Passphrase").toString())
-        this.$store.commit('login')
-      });
+    encrypt(src){ 
+      encryptedText = this.$CryptoJS.AES.encrypt(src, "Secret Passphrase").toString()
+      return encryptedText
+    },
+    decrypt(src){
+      decryptedText = this.$CryptoJS.AES.decrypt(src, "Secret Passphrase").toString(this.CryptoJS.enc.Utf8)
+      return decryptedText
+    },
+
+    login() {
+
+      encriptado = this.encrypt("Atlas")
+      console.log("Data: "+ encriptado)
+      // console.log('ok')
+      // var dict_data= {}
+      // dict_data ['action'] = 'login'
+      // dict_data ['user'] = this.user_name
+      // dict_data ['password'] = this.password
+      
+      // axios.post(this.path, dict_data).then((response) => {
+      //   console.log(response)        
+      //   this.$store.commit('login')
+      // });
       
     },
   },
